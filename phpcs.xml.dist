@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="wp-test">
-  <description>Coding standard for webtheory/wp-test</description>
+<ruleset name="wpunit">
+  <description>Coding standard for webtheory/wpunit</description>
 
   <!-- File paths -->
   <file>./src</file>

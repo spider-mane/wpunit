@@ -1,8 +1,8 @@
 {
-  "name": "webtheory/wp-test",
+  "name": "webtheory/wpunit",
   "type": "library",
-  "description": "Utilities for testing WordPress themes and plugins",
-  "homepage": "https://github.com/spider-mane/wp-test",
+  "description": "Framework for testing WordPress plugins and themes",
+  "homepage": "https://github.com/spider-mane/wpunit",
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +13,7 @@
     }
   ],
   "keywords": [
-    "wp-test",
+    "wpunit",
     "webtheory"
   ],
   "require": {
@@ -23,11 +23,9 @@
   "require-dev": {
     "captainhook/captainhook": "^5.10",
     "fakerphp/faker": "^1.16",
-    "filp/whoops": "^2.5",
     "friendsofphp/php-cs-fixer": "^2.15",
     "maximebf/debugbar": "^1.17",
     "mockery/mockery": "^1.4",
-    "nunomaduro/collision": "^5.3",
     "oscarotero/env": "^2.1",
     "phpcompatibility/php-compatibility": "^9.3",
     "phpunit/phpunit": "^9.5",
@@ -35,9 +33,9 @@
     "psy/psysh": "^0.10.7",
     "spatie/phpunit-watcher": "^1.12",
     "squizlabs/php_codesniffer": "^3.5",
-    "symfony/var-dumper": "^5.4",
     "vimeo/psalm": "^4.7",
     "vlucas/phpdotenv": "^5.3",
+    "webtheory/exterminate": "@stable",
     "wp-cli/wp-cli-bundle": "*"
   },
   "autoload": {

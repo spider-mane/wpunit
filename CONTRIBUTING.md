@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/spider-mane/wp-test).
+We accept contributions via Pull Requests on [Github](https://github.com/spider-mane/wpunit).
 
 ## Pull Requests
 

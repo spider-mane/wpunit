@@ -12,7 +12,7 @@ core download:
   skip-content: true
 
 core install:
-  url: http://wp-test.test
+  url: http://wpunit.test
   title: Wp Test
   admin_user: admin
   admin_password: password
