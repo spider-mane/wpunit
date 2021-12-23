@@ -41,10 +41,7 @@
   "autoload": {
     "psr-4": {
       "WebTheory\\WpTest\\": "src/"
-    },
-    "files": [
-      "src/wp-dmc.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
