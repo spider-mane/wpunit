@@ -22,18 +22,27 @@ class SkyHooks
         static::$tags[] = $tag;
     }
 
-    public static function get(): array
+    public static function get(bool $duplicates = false): array
     {
-        return static::$tags;
+        return $duplicates ? static::$tags : array_unique(static::$tags);
     }
 
-    public static function dump(): void
+    public static function reset(): void
     {
-        function_exists('dump') ? dump(static::$tags) : var_dump(static::$tags);
+        static::$tags = [];
     }
 
-    public static function dd(): void
+    public static function dump(bool $duplicates = false): void
     {
-        function_exists('dd') ? dd(static::$tags) : exit(var_dump(static::$tags));
+        $tags = static::get($duplicates);
+
+        function_exists('dump') ? dump($tags) : var_dump($tags);
+    }
+
+    public static function stop(bool $duplicates = false): void
+    {
+        $tags = static::get($duplicates);
+
+        function_exists('dd') ? dd($tags) : exit(var_dump($tags));
     }
 }

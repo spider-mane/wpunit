@@ -2,17 +2,22 @@
 
 use WebTheory\WpTest\SkyHooks;
 
-function sky_hooks(): array
+function sky_hooks(bool $duplicates = false): array
 {
-    return SkyHooks::get();
+    return SkyHooks::get($duplicates);
 }
 
-function sky_dump(): void
+function sky_reset(): void
 {
-    SkyHooks::dump();
+    SkyHooks::reset();
 }
 
-function sky_dd(): void
+function sky_dump(bool $duplicates = false): void
 {
-    SkyHooks::dd();
+    SkyHooks::dump($duplicates);
+}
+
+function sky_stop(bool $duplicates = false): void
+{
+    SkyHooks::stop($duplicates);
 }
