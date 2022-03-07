@@ -2,52 +2,38 @@
 
 namespace WebTheory\WpTest;
 
+use Closure;
+
 class SkyHooks
 {
-    /**
-     *
-     */
     protected static $tags = [];
 
-    /**
-     *
-     */
-    public static function collect()
+    public static function init(bool $dumpOnExit = false): void
     {
-        add_action('all', [static::class, '_collect']);
+        add_action('all', Closure::fromCallable([static::class, 'collect']));
+
+        if ($dumpOnExit) {
+            add_action('shutdown', [static::class, 'dump']);
+        }
     }
 
-    /**
-     *
-     */
-    public static function _collect($tag)
+    protected static function collect(string $tag)
     {
-        if (!in_array($tag, static::$tags)) {
-            static::$tags[] = $tag;
-        };
+        static::$tags[] = $tag;
     }
 
-    /**
-     *
-     */
-    public static function dump()
-    {
-        add_action('shutdown', [static::class, '_dump']);
-    }
-
-    /**
-     *
-     */
-    public static function _dump()
-    {
-        exit(var_dump(static::$tags));
-    }
-
-    /**
-     *
-     */
-    public static function drop()
+    public static function get(): array
     {
         return static::$tags;
+    }
+
+    public static function dump(): void
+    {
+        function_exists('dump') ? dump(static::$tags) : var_dump(static::$tags);
+    }
+
+    public static function dd(): void
+    {
+        function_exists('dd') ? dd(static::$tags) : exit(var_dump(static::$tags));
     }
 }
