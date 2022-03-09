@@ -1,6 +1,6 @@
 <?php
 
-namespace WebTheory\WpTest;
+namespace WebTheory\WpTest\Skyhooks;
 
 use Closure;
 

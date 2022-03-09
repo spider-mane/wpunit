@@ -43,7 +43,7 @@
       "WebTheory\\WpTest\\": "src/"
     },
     "files": [
-      "src/functions.php"
+      "src/Skyhooks/functions.php"
     ]
   },
   "autoload-dev": {
